@@ -16,19 +16,12 @@ session_start();
     ?>
 
     <div id="main" style="transition: margin-left .5s; padding: 20px;">
-
-        <!-- HERO SECTION WITH BACKGROUND -->
         <section class="hero" id="hero">
-            <div class="overlay">
-                <?php if(isset($_SESSION['username'])): ?>
-                    <h2>Welcome to Bellisse, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h2>
-                <?php else: ?>
-                    <h2>Elegance begins with the perfect dress.</h2>
-                <?php endif; ?>
-
-        
-                <a href="products.php" class="shop-btn">Shop Now →</a>
-            </div>
+            <?php if(isset($_SESSION['username'])): ?>
+                <h2>Welcome to Bellisse, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h2>
+            <?php else: ?>
+                <h2>Elegance begins with the perfect dress.</h2>
+            <?php endif; ?>
         </section>
 
         <br>
@@ -50,25 +43,23 @@ session_start();
         </section>
 
         <section class="featured">
-            <h2>Featured Items</h2>
-            <div class="items">
-                <div class="item">
-                    <img src="Foto/1.png" alt="Floral Dress">
-                    <p>Floral Dress - $60</p>
-                </div>
-                <div class="item">
-                    <img src="Foto/2.png" alt="Satin Dress">
-                    <p>Satin Dress - $80</p>
-                </div>
-                <div class="item">
-                    <img src="Foto/3.png" alt="Lace Dress">
-                    <p>Lace Dress - $140</p>
-                </div>
+        <h2>Featured Items</h2>
+        <div class="items">
+            <div class="item">
+                <img src="Foto/1.png" alt="T-shirt">
+                <p>Floral Dress - $60</p>
             </div>
-        </section>
-
+            <div class="item">
+                <img src="Foto/2.png" alt="Jacket">
+                <p>Satin Dress - $80</p>
+            </div>
+            <div class="item">
+                <img src="Foto/3.png" alt="Shoes">
+                <p>Lace Dress - $140</p>
+            </div>
+        </div>
+    </section>
     </div>
-
     <?php 
     include_once "Footer.php";
     ?>
