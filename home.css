@@ -1,0 +1,140 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #f5ece6;
+    color: #3e2f2f;
+    line-height: 1.6;
+}
+
+/* MAIN CONTAINER */
+#main {
+    padding: 40px;
+    transition: margin-left .5s;
+}
+
+/* HERO SECTION */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(to right, #f5ece6, #f0dfd4);
+    border-radius: 12px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #8c5c4a;
+    letter-spacing: 1px;
+}
+
+/* ABOUT PREVIEW */
+.about-preview {
+    margin-top: 60px;
+}
+
+.img-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.img-container img {
+    width: 50%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.text {
+    width: 50%;
+}
+
+.text h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #8c5c4a;
+}
+
+.text p {
+    font-size: 1rem;
+    color: #5a4a42;
+    margin-bottom: 20px;
+}
+
+#learnmore {
+    text-decoration: none;
+    color: #fff;
+    background-color: #c89b84;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: 0.3s ease;
+}
+
+#learnmore:hover {
+    background-color: #a97862;
+}
+
+/* FEATURED SECTION */
+.featured {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.featured h2 {
+    font-size: 2rem;
+    color: #8c5c4a;
+    margin-bottom: 30px;
+}
+
+/* ITEMS GRID */
+.items {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.item {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    width: 220px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+}
+
+.item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.item p {
+    font-size: 0.95rem;
+    color: #4a3a33;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .img-container {
+        flex-direction: column;
+    }
+
+    .img-container img,
+    .text {
+        width: 100%;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+}

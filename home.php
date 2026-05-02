@@ -41,6 +41,24 @@ session_start();
                 </div>
             </div>
         </section>
+        
+        <section class="featured">
+        <h2>Featured Items</h2>
+        <div class="items">
+            <div class="item">
+                <img src="fotot/vintage t shirt.jpg" alt="T-shirt">
+                <p>Vintage T-shirt - $12</p>
+            </div>
+            <div class="item">
+                <img src="fotot/jacket.jpg" alt="Jacket">
+                <p>Denim Jacket - $25</p>
+            </div>
+            <div class="item">
+                <img src="fotot/tmira.jpg" alt="Shoes">
+                <p>Retro Sneakers - $30</p>
+            </div>
+        </div>
+    </section>
     </div>
     <?php 
     include_once "Footer.php";
