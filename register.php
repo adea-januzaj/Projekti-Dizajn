@@ -42,26 +42,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bellisse Register</title>
-    
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Playfair Display', serif;
-            background-color: #FAEDED;
-            color: #2C2C2C;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-=======
 <?php include_once "Header.php"; ?>
 
 <style>
@@ -71,7 +51,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         background-color: #FAEDED;
         color: #2C2C2C;
     }
->>>>>>> a31312dec989fc00628c89ceea152bfb03109a12
 
     .register-page {
         min-height: calc(100vh - 180px);
