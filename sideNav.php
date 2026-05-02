@@ -1,7 +1,6 @@
 <div id="sideNav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-    <a href="home.php">Home</a>
     <a href="products.php">Dresses</a>
     <a href="#">Collections</a>
     <a href="aboutus.php">About Bellisse</a>
