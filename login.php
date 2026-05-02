@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty($usernameError) && empty($passwordError)) {
-        // Këtu mund ta lidhësh më vonë me databazë
         $_SESSION["username"] = $username;
         header("Location: home.php");
         exit();
@@ -152,12 +151,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="login-card">
         <div class="logo">
-            <span>oh</span>
             BELLISSE
         </div>
 
         <h2>Sign in</h2>
-        <p class="subtitle">Sign in or create your Bellisse account</p>
 
         <form method="POST" action="">
             <label for="username">Username</label>
@@ -174,9 +171,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 Don’t have an account? <a href="register.php">Register</a>
             </div>
 
-            <div class="privacy">
-                By continuing, you agree to Bellisse terms & privacy policy.
-            </div>
+           
         </form>
     </div>
 
