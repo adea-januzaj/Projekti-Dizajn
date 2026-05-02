@@ -1,8 +1,8 @@
 <?php
 session_start();
 $page_title = "Login";
-    require_once 'database.php';
-    include_once "user.php";
+    include_once "Header.php";
+
 
 $usernameError = "";
 $passwordError = "";
@@ -177,6 +177,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            
         </form>
     </div>
-
+    <?php
+    include_once "Footer.php";
+    ?>
 </body>
 </html>
