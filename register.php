@@ -100,10 +100,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     .agree {
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 10px;
         margin-top: 20px;
     }
-
+    .agree input {
+    width: auto;
+    }
+    .agree label {
+        margin: 0;
+        cursor: pointer;
+    }
     button {
         margin-top: 25px;
         width: 100%;
@@ -148,24 +155,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <form method="POST" action="">
             <label>Username</label>
-            <input type="text" name="username">
+            <input type="text" name="username" placeholder="Enter your username">
             <div class="error"><?php echo $usernameError; ?></div>
 
             <label>Email</label>
-            <input type="email" name="email">
+            <input type="email" name="email" placeholder="Enter your email">
             <div class="error"><?php echo $emailError; ?></div>
 
             <label>Password</label>
-            <input type="password" name="password">
+            <input type="password" name="password" placeholder="Enter your password">
             <div class="error"><?php echo $passwordError; ?></div>
 
             <label>Confirm Password</label>
-            <input type="password" name="confirm">
+            <input type="password" name="confirm" placeholder="Confirm your password">
             <div class="error"><?php echo $confirmError; ?></div>
 
             <div class="agree">
                 <input type="checkbox" name="agree">
-                <label>I agree to terms</label>
+                <label>I agree to terms & conditions of Bellisse.</label>
             </div>
             <div class="error"><?php echo $agreeError; ?></div>
 
