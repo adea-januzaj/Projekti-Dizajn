@@ -1,8 +1,7 @@
 <?php
 session_start();
 $page_title = "Login";
-    include_once "Header.php";
-
+   
 
 $usernameError = "";
 $passwordError = "";
@@ -151,7 +150,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-
+<?php 
+    include_once "Header.php";
+    ?>
     <div class="login-card">
         <div class="logo">
             BELLISSE
