@@ -138,3 +138,41 @@ body {
         font-size: 2rem;
     }
 }
+.hero {
+    height: 80vh;
+    background: url('fotot/hero.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.overlay {
+    background: rgba(0,0,0,0.3);
+    padding: 40px;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+}
+
+.hero h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.shop-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #D4A5A5;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.shop-btn:hover {
+    background-color: #b98383;
+}
