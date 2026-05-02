@@ -52,13 +52,6 @@
 
     <footer>
         <p>© 2025 Bellisse</p>
-        <p>Elegance in every detail ✨</p>
-
-        <div class="footer-links">
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-            <a href="#">Privacy</a>
-        </div>
     </footer>
 
 </body>
