@@ -1,0 +1,45 @@
+<?php 
+session_start();
+?>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bellisse</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <?php 
+    include_once "header.php";
+    include_once "sidenav.php";
+    ?>
+
+    <div id="main" style="transition: margin-left .5s; padding: 20px;">
+        <section class="hero" id="hero">
+            <?php if(isset($_SESSION['username'])): ?>
+                <h2>Welcome to Bellisse, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h2>
+            <?php else: ?>
+                <h2>Elegance begins with the perfect dress.</h2>
+            <?php endif; ?>
+        </section>
+
+        <br>
+
+        <section class="about-preview">
+            <div class="img-container">
+                <img src="fotot/Country Retro Aesthetic.jpg" alt="Elegant dresses collection">
+                
+                <div class="text">
+                    <h3>Discover your perfect dress</h3>
+                    <p>
+                        Bellisse is an elegant online boutique created for women who love beauty,
+                        confidence and timeless style. From graceful evening dresses to feminine
+                        everyday looks, every piece is chosen to make you feel special.
+                    </p>
+                    <a href="aboutus.php" id="learnmore">Learn more →</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
