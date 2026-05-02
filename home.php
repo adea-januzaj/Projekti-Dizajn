@@ -41,21 +41,21 @@ session_start();
                 </div>
             </div>
         </section>
-        
+
         <section class="featured">
         <h2>Featured Items</h2>
         <div class="items">
             <div class="item">
-                <img src="fotot/vintage t shirt.jpg" alt="T-shirt">
-                <p>Vintage T-shirt - $12</p>
+                <img src="Foto/1.png" alt="T-shirt">
+                <p>Floral Dress - $60</p>
             </div>
             <div class="item">
-                <img src="fotot/jacket.jpg" alt="Jacket">
-                <p>Denim Jacket - $25</p>
+                <img src="Foto/2.png" alt="Jacket">
+                <p>Satin Dress - $80</p>
             </div>
             <div class="item">
-                <img src="fotot/tmira.jpg" alt="Shoes">
-                <p>Retro Sneakers - $30</p>
+                <img src="Foto/3.png" alt="Shoes">
+                <p>Lace Dress - $140</p>
             </div>
         </div>
     </section>
