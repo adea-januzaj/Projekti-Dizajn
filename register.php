@@ -1,5 +1,6 @@
 <?php
 session_start();
+$page_title = "Register";
 
 $usernameError = "";
 $emailError = "";
@@ -15,25 +16,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($username)) {
         $usernameError = "Please enter your username.";
-    } elseif (strlen($username) < 4) {
-        $usernameError = "Username must be at least 4 characters.";
     }
 
     if (empty($email)) {
         $emailError = "Please enter your email.";
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $emailError = "Please enter a valid email.";
     }
 
     if (empty($password)) {
         $passwordError = "Please enter your password.";
-    } elseif (strlen($password) < 8) {
-        $passwordError = "Password must be at least 8 characters.";
     }
 
-    if (empty($confirm)) {
-        $confirmError = "Please confirm your password.";
-    } elseif ($password !== $confirm) {
+    if ($password !== $confirm) {
         $confirmError = "Passwords do not match.";
     }
 
@@ -49,6 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,139 +61,132 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             justify-content: center;
             align-items: center;
         }
+=======
+<?php include_once "Header.php"; ?>
 
-        .register-card {
-            background-color: #FFFFFF;
-            width: 430px;
-            padding: 50px 55px;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
+<style>
+    body {
+        margin: 0;
+        font-family: 'Playfair Display', serif;
+        background-color: #FAEDED;
+        color: #2C2C2C;
+    }
+>>>>>>> a31312dec989fc00628c89ceea152bfb03109a12
 
-        .logo {
-            text-align: center;
-            font-size: 42px;
-            letter-spacing: 4px;
-            margin-bottom: 30px;
-            color: #2C2C2C;
-        }
+    .register-page {
+        min-height: calc(100vh - 180px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 20px;
+    }
 
-        h2 {
-            margin: 0;
-            font-size: 28px;
-        }
+    .register-card {
+        background-color: #FFFFFF;
+        width: 430px;
+        padding: 50px;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
 
-        .subtitle {
-            color: #777;
-            margin: 10px 0 25px;
-            font-size: 17px;
-        }
+    .logo {
+        text-align: center;
+        font-size: 42px;
+        letter-spacing: 4px;
+        margin-bottom: 30px;
+    }
 
-        label {
-            display: block;
-            margin-top: 15px;
-            margin-bottom: 7px;
-            font-size: 15px;
-        }
+    h2 {
+        margin: 0;
+        font-size: 28px;
+    }
 
-        input {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #2C2C2C;
-            font-size: 15px;
-            box-sizing: border-box;
-            outline: none;
-        }
+    label {
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 7px;
+    }
 
-        input:focus {
-            border-color: #C89B8C;
-        }
+    input {
+        width: 100%;
+        padding: 15px;
+        border: 2px solid #2C2C2C;
+        outline: none;
+    }
 
-        .agree {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
+    input:focus {
+        border-color: #C89B8C;
+    }
 
-        .agree input {
-            width: auto;
-        }
+    .agree {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
 
-        .agree label {
-            margin: 0;
-            font-size: 14px;
-        }
+    button {
+        margin-top: 25px;
+        width: 100%;
+        padding: 15px;
+        border: none;
+        background-color: #2C2C2C;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
 
-        button {
-            margin-top: 25px;
-            width: 100%;
-            padding: 16px;
-            border: none;
-            background-color: #2C2C2C;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            letter-spacing: 1px;
-        }
+    button:hover {
+        background-color: #C89B8C;
+    }
 
-        button:hover {
-            background-color: #C89B8C;
-        }
+    .error {
+        color: #D9534F;
+        font-size: 13px;
+    }
 
-        .error {
-            color: #D9534F;
-            font-size: 13px;
-            margin-top: 5px;
-        }
+    .login-link {
+        text-align: center;
+        margin-top: 25px;
+    }
 
-        .login-link {
-            text-align: center;
-            margin-top: 28px;
-            font-size: 15px;
-        }
+    .login-link a {
+        font-weight: bold;
+        text-decoration: none;
+        color: #2C2C2C;
+    }
 
-        .login-link a {
-            color: #2C2C2C;
-            font-weight: bold;
-            text-decoration: none;
-        }
+    .login-link a:hover {
+        color: #C89B8C;
+    }
+</style>
 
-        .login-link a:hover {
-            color: #C89B8C;
-        }
-    </style>
-</head>
-
-<body>
-
+<div class="register-page">
     <div class="register-card">
         <div class="logo">BELLISSE</div>
 
         <h2>Create account</h2>
-        <p class="subtitle">Join Bellisse and discover your perfect dress</p>
 
         <form method="POST" action="">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="Enter username">
+            <label>Username</label>
+            <input type="text" name="username">
             <div class="error"><?php echo $usernameError; ?></div>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter email">
+            <label>Email</label>
+            <input type="email" name="email">
             <div class="error"><?php echo $emailError; ?></div>
 
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter password">
+            <label>Password</label>
+            <input type="password" name="password">
             <div class="error"><?php echo $passwordError; ?></div>
 
-            <label for="confirm">Confirm Password</label>
-            <input type="password" id="confirm" name="confirm" placeholder="Confirm password">
+            <label>Confirm Password</label>
+            <input type="password" name="confirm">
             <div class="error"><?php echo $confirmError; ?></div>
 
             <div class="agree">
-                <input type="checkbox" id="agree" name="agree">
-                <label for="agree">I agree to Bellisse terms & conditions</label>
+                <input type="checkbox" name="agree">
+                <label>I agree to terms</label>
             </div>
             <div class="error"><?php echo $agreeError; ?></div>
 
@@ -210,6 +197,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </form>
     </div>
+</div>
 
-</body>
-</html>
+<?php include_once "Footer.php"; ?>
