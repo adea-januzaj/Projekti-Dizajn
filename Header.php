@@ -84,8 +84,6 @@
         <nav>
             <ul> 
                 <li><a href="home.php" class="clean-link">Home</a></li>
-                <li><a href="#" class="clean-link">Dresses</a></li>
-                <li><a href="#" class="clean-link">Collections</a></li>
 
                 <?php if(isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
                     <li><a href="admin_dashboard.php" class="clean-link" style="color: #C89B9B; font-weight: bold;">Dashboard</a></li>
