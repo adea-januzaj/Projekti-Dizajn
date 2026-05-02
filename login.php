@@ -1,5 +1,8 @@
 <?php
 session_start();
+$page_title = "Login";
+    require_once 'database.php';
+    include_once "user.php";
 
 $usernameError = "";
 $passwordError = "";
