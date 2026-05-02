@@ -11,7 +11,7 @@ session_start();
 
 <body>
     <?php 
-    include_once "header.php";
+    include_once "Header.php";
     include_once "sidenav.php";
     ?>
 
@@ -42,4 +42,7 @@ session_start();
             </div>
         </section>
     </div>
+    <?php 
+    include_once "Footer.php";
+    ?>
 </body>
