@@ -1,11 +1,9 @@
 <?php
 session_start();
 $page_title = "Login";
-   
 
 $usernameError = "";
 $passwordError = "";
-$success = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST["username"]);
@@ -27,136 +25,108 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bellisse Login</title>
+<?php include_once "Header.php"; ?>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Playfair Display', serif;
-            background-color: #FAEDED;
-            color: #2C2C2C;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+<style>
+    body {
+        margin: 0;
+        font-family: 'Playfair Display', serif;
+        background-color: #FAEDED;
+        color: #2C2C2C;
+    }
 
-        .login-card {
-            background-color: #FFFFFF;
-            width: 430px;
-            padding: 55px;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
+    .login-page {
+        min-height: calc(100vh - 180px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 20px;
+    }
 
-        .logo {
-            text-align: center;
-            font-size: 42px;
-            letter-spacing: 4px;
-            margin-bottom: 35px;
-            color: #2C2C2C;
-        }
+    .login-card {
+        background-color: #FFFFFF;
+        width: 430px;
+        padding: 55px;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
 
-        .logo span {
-            display: block;
-            font-style: italic;
-            font-size: 26px;
-            letter-spacing: 1px;
-            color: #C89B8C;
-        }
+    .logo {
+        text-align: center;
+        font-size: 42px;
+        letter-spacing: 4px;
+        margin-bottom: 35px;
+        color: #2C2C2C;
+    }
 
-        h2 {
-            margin: 0;
-            font-size: 28px;
-        }
+    h2 {
+        margin: 0;
+        font-size: 28px;
+    }
 
-        .subtitle {
-            color: #777;
-            margin: 10px 0 30px;
-            font-size: 17px;
-        }
+    label {
+        display: block;
+        margin-top: 18px;
+        margin-bottom: 7px;
+        font-size: 15px;
+    }
 
-        label {
-            display: block;
-            margin-top: 18px;
-            margin-bottom: 7px;
-            font-size: 15px;
-        }
+    input {
+        width: 100%;
+        padding: 16px;
+        border: 2px solid #2C2C2C;
+        font-size: 16px;
+        box-sizing: border-box;
+        outline: none;
+    }
 
-        input {
-            width: 100%;
-            padding: 16px;
-            border: 2px solid #2C2C2C;
-            font-size: 16px;
-            box-sizing: border-box;
-            outline: none;
-        }
+    input:focus {
+        border-color: #C89B8C;
+    }
 
-        input:focus {
-            border-color: #C89B8C;
-        }
+    button {
+        margin-top: 28px;
+        width: 100%;
+        padding: 16px;
+        border: none;
+        background-color: #2C2C2C;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        letter-spacing: 1px;
+    }
 
-        button {
-            margin-top: 28px;
-            width: 100%;
-            padding: 16px;
-            border: none;
-            background-color: #2C2C2C;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            letter-spacing: 1px;
-        }
+    button:hover {
+        background-color: #C89B8C;
+    }
 
-        button:hover {
-            background-color: #C89B8C;
-        }
+    .error {
+        color: #D9534F;
+        font-size: 13px;
+        margin-top: 5px;
+    }
 
-        .error {
-            color: #D9534F;
-            font-size: 13px;
-            margin-top: 5px;
-        }
+    .register-link {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 15px;
+    }
 
-        .register-link {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 15px;
-        }
+    .register-link a {
+        color: #2C2C2C;
+        font-weight: bold;
+        text-decoration: none;
+    }
 
-        .register-link a {
-            color: #2C2C2C;
-            font-weight: bold;
-            text-decoration: none;
-        }
+    .register-link a:hover {
+        color: #C89B8C;
+    }
+</style>
 
-        .register-link a:hover {
-            color: #C89B8C;
-        }
-
-        .privacy {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 13px;
-            color: #777;
-        }
-    </style>
-</head>
-
-<body>
-<?php 
-    include_once "Header.php";
-    ?>
+<div class="login-page">
     <div class="login-card">
-        <div class="logo">
-            BELLISSE
-        </div>
+        <div class="logo">BELLISSE</div>
 
         <h2>Sign in</h2>
 
@@ -174,12 +144,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="register-link">
                 Don’t have an account? <a href="register.php">Register</a>
             </div>
-
-           
         </form>
     </div>
-    <?php
-    include_once "Footer.php";
-    ?>
-</body>
-</html>
+</div>
+
+<?php include_once "Footer.php"; ?>
