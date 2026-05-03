@@ -129,17 +129,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     .error {
         color: #D9534F;
         font-size: 13px;
+        
+    }
+    .termserror {
+        display: flex;
+        color: #D9534F;
+        font-size: 13px;
+        text-align: center;
+        justify-content: center;
     }
 
     .login-link {
         text-align: center;
-        margin-top: 25px;
+        margin-top: 30px;
+        font-size: 15px;
     }
 
     .login-link a {
+        color: #2C2C2C;
         font-weight: bold;
         text-decoration: none;
-        color: #2C2C2C;
     }
 
     .login-link a:hover {
@@ -174,7 +183,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="checkbox" name="agree">
                 <label>I agree to terms & conditions of Bellisse.</label>
             </div>
-            <div class="error"><?php echo $agreeError; ?></div>
+            <div class="termserror"><?php echo $agreeError; ?></div>
 
             <button type="submit">REGISTER</button>
 
