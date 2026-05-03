@@ -2,9 +2,9 @@
 
 class Database{
     private $host = 'localhost';
-    private $dbname = 'projekti';
-    private $username = 'user1';
-    private $password = 'kanitaAdea123';
+    private $dbname = 'projekti-dizajn';
+    private $username = 'root';
+    private $password = '';
     private $conn;
 
     public function __construct(){

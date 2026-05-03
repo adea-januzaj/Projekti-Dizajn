@@ -1,6 +1,12 @@
 <?php
 session_start();
 $page_title = "Register";
+include_once "database.php";
+include_once "user.php";
+
+$database = new Database();
+$db = $database->getConnection();
+$user = new User($db);
 
 $usernameError = "";
 $emailError = "";
