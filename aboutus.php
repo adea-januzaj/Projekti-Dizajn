@@ -13,12 +13,13 @@ include "sidenav.php";
     }
 
     #main {
+        background: 
         transition: margin-left .5s;
         padding: 20px;
     }
 
     .pageHeader {
-        background-color: #F3E8E6;
+        background: linear-gradient(to right, #f5ece6, #f0dfd4);
         text-align: center;
         padding: 70px 20px;
         border-radius: 15px;
@@ -26,17 +27,18 @@ include "sidenav.php";
     }
 
     .pageHeader h2 {
-        font-size: 42px;
+        font-family: 'Playfair Display', serif;
+         font-size: 2.5rem;
+         font-weight: 500;
         letter-spacing: 3px;
         margin: 0;
-        color: #2C2C2C;
+        color:  #8c5c4a;
     }
 
     .pageHeader p {
-        font-size: 18px;
-        color: #A67C6D;
-        margin-top: 15px;
-        font-style: italic;
+       font-size: 15px;
+    opacity: 0.8;
+       
     }
 
     .aboutContent {
