@@ -153,28 +153,56 @@ body {
 
         <div class="slides">
             <div class="card">
-                <img src="uploads/dress1.jpg">
+                <img src="Foto/5.png">
                 <h3>Elara</h3>
                 <p>Silk Corset Gown</p>
                 <span>€120</span>
             </div>
 
             <div class="card">
-                <img src="uploads/dress2.jpg">
+                <img src="Foto/6.png">
                 <h3>Roselle</h3>
                 <p>Floral Embellished Dress</p>
                 <span>€150</span>
             </div>
 
             <div class="card">
-                <img src="uploads/dress3.jpg">
+                <img src="Foto/7.png">
                 <h3>Virelle</h3>
                 <p>Minimal Satin Cut</p>
                 <span>€110</span>
             </div>
 
             <div class="card">
-                <img src="uploads/dress4.jpg">
+                <img src="Foto/8.png">
+                <h3>Lumina</h3>
+                <p>Draped Evening Dress</p>
+                <span>€135</span>
+            </div>
+
+            <div class="card">
+                <img src="Foto/9.png">
+                <h3>Lumina</h3>
+                <p>Draped Evening Dress</p>
+                <span>€135</span>
+            </div>
+
+            <div class="card">
+                <img src="Foto/10.png">
+                <h3>Lumina</h3>
+                <p>Draped Evening Dress</p>
+                <span>€135</span>
+            </div>
+
+            <div class="card">
+                <img src="Foto/11.png">
+                <h3>Lumina</h3>
+                <p>Draped Evening Dress</p>
+                <span>€135</span>
+            </div>
+
+            <div class="card">
+                <img src="Foto/12.png">
                 <h3>Lumina</h3>
                 <p>Draped Evening Dress</p>
                 <span>€135</span>
