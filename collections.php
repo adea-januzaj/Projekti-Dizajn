@@ -155,12 +155,14 @@ body {
                 <img src="Foto/3.png">
                 <h3>Elara</h3>
                 <p>Silk Corset Gown</p>
+                <br>
             </div>
 
             <div class="card">
                 <img src="Foto/25.png">
                 <h3>Roselle</h3>
                 <p>Floral Embellished Lace</p>
+               
             </div>
 
             <div class="card">
@@ -222,7 +224,7 @@ body {
                 <img src="Foto/32.png">
                 <h3>Amoura</h3>
                 <p>Soft Red Flow</p>
-               
+                <br>
             </div>
 
             <div class="card">
