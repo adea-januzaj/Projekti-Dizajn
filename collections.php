@@ -222,25 +222,63 @@ body {
 
         <div class="slides">
             <div class="card">
-                <img src="uploads/dress5.jpg">
+                <img src="Foto/32.png">
                 <h3>Amoura</h3>
                 <p>Soft Pink Flow</p>
                 <span>€140</span>
             </div>
 
             <div class="card">
-                <img src="uploads/dress6.jpg">
+                <img src="Foto/33.png">
                 <h3>Serene</h3>
                 <p>Light Silk Elegance</p>
                 <span>€125</span>
             </div>
 
             <div class="card">
-                <img src="uploads/dress7.jpg">
+                <img src="Foto/34.png">
                 <h3>Floria</h3>
                 <p>Floral Lace Detail</p>
                 <span>€160</span>
             </div>
+           
+            <div class="card">
+                <img src="Foto/35.png">
+                <h3>Floria</h3>
+                <p>Floral Lace Detail</p>
+                <span>€160</span>
+            </div>
+            <div class="card">
+                <img src="Foto/36.png">
+                <h3>Floria</h3>
+                <p>Floral Lace Detail</p>
+                <span>€160</span>
+            </div>
+            <div class="card">
+                <img src="Foto/37.png">
+                <h3>Floria</h3>
+                <p>Floral Lace Detail</p>
+                <span>€160</span>
+            </div>
+            <div class="card">
+                <img src="Foto/38.png">
+                <h3>Floria</h3>
+                <p>Floral Lace Detail</p>
+                <span>€160</span>
+            </div>
+            <div class="card">
+                <img src="Foto/39.png">
+                <h3>Floria</h3>
+                <p>Floral Lace Detail</p>
+                <span>€160</span>
+            </div>
+            <div class="card">
+                <img src="Foto/14.png">
+                <h3>Floria</h3>
+                <p>Floral Lace Detail</p>
+                <span>€160</span>
+            </div>
+
         </div>
 
         <button class="arrow right">&#10095;</button>
