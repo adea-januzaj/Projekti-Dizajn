@@ -286,31 +286,125 @@ body {
 
 
 <section class="collection">
-    <h2>Modern Muse</h2>
+    <h2>Floral Luxe</h2>
 
     <div class="slider">
         <button class="arrow left">&#10094;</button>
 
         <div class="slides">
             <div class="card">
-                <img src="uploads/dress8.jpg">
-                <h3>Noirelle</h3>
-                <p>Bold Black Statement</p>
-                <span>€180</span>
+                <img src="Foto/17.png">
+                <h3>Florielle</h3>
+                <p>Soft Bloom Elegance</p>
             </div>
 
             <div class="card">
-                <img src="uploads/dress9.jpg">
+                <img src="Foto/7.png">
+                <h3>Petalia</h3>
+                <p>Wild Floral Grace</p>
+            </div>
+
+            <div class="card">
+                <img src="Foto/30.png">
+                <h3>Blooma</h3>
+                <p>Floral Dream Essence</p>
+            </div>
+
+            <div class="card">
+                <img src="Foto/29.png">
+                <h3>Rosina</h3>
+                <p>Garden Muse Beauty</p>
+            </div>
+
+            <div class="card">
+                <img src="Foto/28.png">
+                <h3>Fleuria</h3>
+                <p>Delicate Blossom Glow</p>
+            </div>
+
+            <div class="card">
+                <img src="Foto/1.png">
+                <h3>Liora</h3>
+                <p>Romantic Petal Charm</p>
+            </div>
+
+            <div class="card">
+                <img src="Foto/31.png">
+                <h3>Fiora</h3>
+                <p>Floral Fantasy</p>
+            </div>
+        </div>
+    
+        <button class="arrow right">&#10095;</button>
+    </div>
+</section>
+
+
+<section class="collection">
+    <h2>Best Sellers</h2>
+
+    <div class="slider">
+        <button class="arrow left">&#10094;</button>
+
+        <div class="slides">
+            <div class="card">
+                <img src="Foto/5.png">
+                <h3>Liora</h3>
+                <p>Timeless Ivory Elegance</p>
+            </div>
+
+            <div class="card">
+                <img src="Foto/6.png">
                 <h3>Velisse</h3>
-                <p>Structured Corset Fit</p>
-                <span>€155</span>
+                <p>Golden Glow Confidence</p>
             </div>
 
             <div class="card">
-                <img src="uploads/dress10.jpg">
-                <h3>Ivoree</h3>
-                <p>Classic Ivory Look</p>
-                <span>€130</span>
+                <img src="Foto/18.png">
+                <h3>Noira</h3>
+                <p>Soft Glam Statement</p>
+            </div>
+
+            <div class="card">
+                <img src="Foto/8.png">
+                <h3>Celina</h3>
+                <p>Ocean Muse Elegance</p>
+            </div>
+
+            <div class="card">
+                <img src="Foto/21.png">
+                <h3>Virelle</h3>
+                <p>Pure Icon Energy</p>
+            </div>
+
+            <div class="card">
+                <img src="Foto/9.png">
+                <h3>Velora</h3>
+                <p>Playful Chic Vibes</p>
+            </div>
+
+            <div class="card">
+                <img src="Foto/19.png">
+                <h3>Celisse</h3>
+                <p>Modern Sculpted Style</p>
+            </div>
+
+            <div class="card">
+                <img src="Foto/20.png">
+                <h3>Noira</h3>
+                <p>Midnight Power Look</p>
+            </div>
+
+            <div class="card">
+                <img src="Foto/26.png">
+                <h3>Serelle</h3>
+                <p>Blush Confidence Glow</p>
+            </div>
+
+            <div class="card">
+                <img src="Foto/13.png">
+                <h3>Aloura</h3>
+                <p>Cool Chic Essence</p>
             </div>
         </div>
 
