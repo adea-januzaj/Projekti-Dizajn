@@ -1,8 +1,8 @@
 <div id="sideNav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-    <a href="products.php">Dresses</a>
-    <a href="#">Collections</a>
+    <a href="dresses.php">Dresses</a>
+    <a href="collections.php">Collections</a>
     <a href="aboutus.php">About Bellisse</a>
     <a href="contactus.php">Contact</a>
 </div>
