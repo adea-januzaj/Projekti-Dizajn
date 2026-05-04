@@ -1,8 +1,7 @@
 <?php
 session_start();
-$page_title = "Dresses";
-
 include_once "Header.php";
+include_once "sidenav.php";
 ?>
 
 <!DOCTYPE html>
