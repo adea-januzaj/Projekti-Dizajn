@@ -28,8 +28,8 @@ include "sidenav.php";
 
     .pageHeader h2 {
         font-family: 'Playfair Display', serif;
-         font-size: 2.5rem;
-         font-weight: 500;
+        font-size: 2.5rem;
+        font-weight: 500;
         letter-spacing: 3px;
         margin: 0;
         color:  #8c5c4a;
@@ -37,7 +37,7 @@ include "sidenav.php";
 
     .pageHeader p {
        font-size: 15px;
-    opacity: 0.8;
+       opacity: 0.8;
        
     }
 
