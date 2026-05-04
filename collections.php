@@ -12,21 +12,21 @@ include_once "sidenav.php";
 
 <style>
 
-/* RESET */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BODY */
+
 body {
     font-family: 'Playfair Display', serif;
     background: #f8f3ef;
     color: #2c2c2c;
 }
 
-/* COLLECTION */
+
 .collection {
     padding: 100px 60px;
     opacity: 0;
@@ -46,7 +46,7 @@ body {
     letter-spacing: 3px;
 }
 
-/* SLIDER */
+
 .slider {
     position: relative;
     display: flex;
@@ -65,7 +65,7 @@ body {
     display: none;
 }
 
-/* CARD */
+
 .card {
     min-width: 260px;
     background: #fff;
@@ -103,7 +103,6 @@ body {
     font-weight: bold;
 }
 
-/* ARROWS */
 .arrow {
     position: absolute;
     background: rgba(255,255,255,0.8);
@@ -124,7 +123,7 @@ body {
 .left { left: -10px; }
 .right { right: -10px; }
 
-/* RESPONSIVE */
+
 @media(max-width:768px){
     .collection {
         padding: 60px 20px;
@@ -144,7 +143,7 @@ body {
 
 <body>
 
-<!-- COLLECTION 1 -->
+
 <section class="collection">
     <h2>Royal Lace</h2>
 
@@ -156,56 +155,54 @@ body {
                 <img src="Foto/3.png">
                 <h3>Elara</h3>
                 <p>Silk Corset Gown</p>
-                <span>€120</span>
             </div>
 
             <div class="card">
                 <img src="Foto/25.png">
                 <h3>Roselle</h3>
-                <p>Floral Embellished Dress</p>
-                <span>€150</span>
+                <p>Floral Embellished Lace</p>
             </div>
 
             <div class="card">
                 <img src="Foto/11.png">
                 <h3>Virelle</h3>
                 <p>Minimal Satin Cut</p>
-                <span>€110</span>
+           
             </div>
 
             <div class="card">
                 <img src="Foto/15.png">
                 <h3>Lumina</h3>
                 <p>Draped Evening Dress</p>
-                <span>€135</span>
+               
             </div>
 
             <div class="card">
                 <img src="Foto/10.png">
-                <h3>Lumina</h3>
-                <p>Draped Evening Dress</p>
-                <span>€135</span>
+                <h3>Velina</h3>
+                <p>Sheer Subtle Lace </p>
+                
             </div>
 
             <div class="card">
                 <img src="Foto/9.png">
-                <h3>Lumina</h3>
-                <p>Draped Evening Dress</p>
-                <span>€135</span>
+                <h3>Noelle</h3>
+                <p>Light Fluid Lace</p>
+               
             </div>
 
             <div class="card">
                 <img src="Foto/24.png">
-                <h3>Lumina</h3>
-                <p>Draped Evening Dress</p>
-                <span>€135</span>
+                <h3>Evania</h3>
+                <p>Vintage Modern Cut</p>
+              
             </div>
 
             <div class="card">
                 <img src="Foto/27.png">
-                <h3>Lumina</h3>
-                <p>Draped Evening Dress</p>
-                <span>€135</span>
+                <h3>Almira</h3>
+                <p>Intricate Refinished Lace</p>
+              
             </div>
         </div>
 
@@ -213,7 +210,7 @@ body {
     </div>
 </section>
 
-<!-- COLLECTION 2 -->
+
 <section class="collection">
     <h2>Soft Romance</h2>
 
@@ -224,59 +221,59 @@ body {
             <div class="card">
                 <img src="Foto/32.png">
                 <h3>Amoura</h3>
-                <p>Soft Pink Flow</p>
-                <span>€140</span>
+                <p>Soft Red Flow</p>
+               
             </div>
 
             <div class="card">
                 <img src="Foto/33.png">
                 <h3>Serene</h3>
-                <p>Light Silk Elegance</p>
-                <span>€125</span>
+                <p>Light Elegance</p>
+               
             </div>
 
             <div class="card">
                 <img src="Foto/34.png">
                 <h3>Floria</h3>
-                <p>Floral Lace Detail</p>
-                <span>€160</span>
+                <p>Silhouette Detail</p>
+                
             </div>
            
             <div class="card">
                 <img src="Foto/35.png">
-                <h3>Floria</h3>
+                <h3>Aveline</h3>
                 <p>Floral Lace Detail</p>
-                <span>€160</span>
+              
             </div>
             <div class="card">
                 <img src="Foto/36.png">
-                <h3>Floria</h3>
-                <p>Floral Lace Detail</p>
-                <span>€160</span>
+                <h3>Ismera</h3>
+                <p>Fiery Grace</p>
+               
             </div>
             <div class="card">
                 <img src="Foto/37.png">
-                <h3>Floria</h3>
-                <p>Floral Lace Detail</p>
-                <span>€160</span>
+                <h3>Calira</h3>
+                <p>Soft Confidence</p>
+                
             </div>
             <div class="card">
                 <img src="Foto/38.png">
-                <h3>Floria</h3>
-                <p>Floral Lace Detail</p>
-                <span>€160</span>
+                <h3>Mirelle</h3>
+                <p>Ivory Lace Feel</p>
+               
             </div>
             <div class="card">
                 <img src="Foto/39.png">
-                <h3>Floria</h3>
-                <p>Floral Lace Detail</p>
-                <span>€160</span>
+                <h3>Rosie</h3>
+                <p>Bold Feminine Look</p>
+              
             </div>
             <div class="card">
                 <img src="Foto/14.png">
-                <h3>Floria</h3>
-                <p>Floral Lace Detail</p>
-                <span>€160</span>
+                <h3>Zarela</h3>
+                <p>Satin Soft Pearl</p>
+               
             </div>
 
         </div>
@@ -285,7 +282,7 @@ body {
     </div>
 </section>
 
-<!-- COLLECTION 3 -->
+
 <section class="collection">
     <h2>Modern Muse</h2>
 
@@ -321,7 +318,7 @@ body {
 
 <script>
 
-// SLIDER
+
 document.querySelectorAll('.slider').forEach(slider => {
     const slides = slider.querySelector('.slides');
     const left = slider.querySelector('.left');
@@ -336,7 +333,7 @@ document.querySelectorAll('.slider').forEach(slider => {
     });
 });
 
-// ANIMATION FIX
+
 const sections = document.querySelectorAll('.collection');
 
 function showSections() {
@@ -349,7 +346,7 @@ function showSections() {
     });
 }
 
-// SHFAQ DIREKT (fix problemi yt)
+
 showSections();
 
 window.addEventListener('scroll', showSections);
