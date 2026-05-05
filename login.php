@@ -1,13 +1,17 @@
 <?php
 session_start();
 $page_title = "Login";
-include_once "database.php";
-include_once "user.php";
+require_once "database.php";
+require_once "user.php";
 
 $usernameError = "";
 $passwordError = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $db = new Database();
+    $conn = $db->getConnection();
+    $user = new User($conn);
+    
     $username = trim($_POST["username"]);
     $password = trim($_POST["password"]);
 

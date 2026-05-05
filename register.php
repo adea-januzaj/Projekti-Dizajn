@@ -1,8 +1,8 @@
 <?php
 session_start();
 $page_title = "Register";
-include_once "database.php";
-include_once "user.php";
+require_once "database.php";
+require_once "user.php";
 
 $database = new Database();
 $db = $database->getConnection();
@@ -15,6 +15,7 @@ $confirmError = "";
 $agreeError = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     $username = trim($_POST["username"]);
     $email = trim($_POST["email"]);
     $password = trim($_POST["password"]);
@@ -41,10 +42,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty($usernameError) && empty($emailError) && empty($passwordError) && empty($confirmError) && empty($agreeError)) {
-        $_SESSION["username"] = $username;
-        header("Location: home.php");
-        exit();
+
+
+    if ($user->isDuplicate("email", $email)) {
+        $emailError = "Email already exists!";
+    } else {
+
+    if ($user->isDuplicate("username", $username)) {
+        $usernameError = "Username already exists!";
+    } else {
+
+
+        if ($user->register($username, $email, $password)) {
+
+            $_SESSION["username"] = $username;
+            header("Location: home.php");
+            exit();
+
+        } else {
+            echo "Gabim gjate regjistrimit!";
+        }
     }
+}
+}
 }
 ?>
 
@@ -186,7 +206,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="error"><?php echo $confirmError; ?></div>
 
             <div class="agree">
-                <input type="checkbox" name="agree">
+                <input type="checkbox" name="agree" required>
                 <label>I agree to terms & conditions of Bellisse.</label>
             </div>
             <div class="termserror"><?php echo $agreeError; ?></div>
