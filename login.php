@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $db = new Database();
     $conn = $db->getConnection();
     $user = new User($conn);
-    
+
     $username = trim($_POST["username"]);
     $password = trim($_POST["password"]);
 
@@ -22,11 +22,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($password)) {
         $passwordError = "Please enter your password.";
     }
-
     if (empty($usernameError) && empty($passwordError)) {
-        $_SESSION["username"] = $username;
-        header("Location: home.php");
-        exit();
+
+    $userData = $user->login($username, $password);
+
+     if ($userData !== false) {
+
+            $_SESSION["username"] = $userData["username"];
+            $_SESSION["role"] = $userData["role"];
+
+            header("Location: home.php");
+            exit();
+
+        } else {
+            $passwordError = "Username ose password gabim!";
+        }
     }
 }
 ?>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once "Header.php";
 include_once "sidenav.php";
 
