@@ -10,7 +10,7 @@ if ($_SESSION['role'] !== 'admin') {
 $db = new Database();
 $conn = $db->getConnection();
 
-// DELETE USER
+
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
     $stmt = $conn->prepare("DELETE FROM useri WHERE id = ?");
@@ -19,7 +19,7 @@ if (isset($_GET['delete'])) {
     exit();
 }
 
-// FETCH USERS
+
 $users = $conn->query("SELECT * FROM useri")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 

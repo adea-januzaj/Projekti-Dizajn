@@ -197,7 +197,7 @@ include_once "sidenav.php";
         <div class="admin-menu">
             <a href="manage-dresses.php" class="admin-btn">Manage Dresses</a>
             <a href="manage-users.php" class="admin-btn">Manage Users</a>
-            <a href="view-contacts.php" class="admin-btn">View Messages</a>
+            <a href="view-messages.php" class="admin-btn">View Messages</a>
             <a href="home.php" class="admin-btn">Home</a>
         </div>
 

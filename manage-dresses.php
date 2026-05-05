@@ -10,7 +10,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
 $db = new Database();
 $conn = $db->getConnection();
 
-// DELETE PRODUCT
+
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
     $stmt = $conn->prepare("DELETE FROM products WHERE id = ?");
@@ -19,12 +19,15 @@ if (isset($_GET['delete'])) {
     exit();
 }
 
-// FETCH PRODUCTS
+
 $stmt = $conn->query("SELECT * FROM products ORDER BY id DESC");
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<?php include "Header.php"; include "sidenav.php"; ?>
+<?php 
+include_once "Header.php"; 
+include_once "sidenav.php"; 
+?>
 
 <style>
 body { font-family: 'Playfair Display', serif; background:#FAF7F5; }
