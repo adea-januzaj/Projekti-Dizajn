@@ -1,12 +1,7 @@
 <?php
 session_start();
-include_once 'Database.php';
-include_once 'config.php';
-
-if(!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 'admin') {
-    header("Location: login.php");
-    exit();
-}
+include_once 'database.php';
+include_once 'user.php';
 
 $database = new Database();
 $conn = $database->getConnection();
