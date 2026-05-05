@@ -296,6 +296,7 @@ body {
                 <img src="Foto/17.png">
                 <h3>Florielle</h3>
                 <p>Soft Bloom Elegance</p>
+                <br>
             </div>
 
             <div class="card">
@@ -351,6 +352,7 @@ body {
                 <img src="Foto/5.png">
                 <h3>Liora</h3>
                 <p>Timeless Ivory Elegance</p>
+                <br>
             </div>
 
             <div class="card">
