@@ -133,7 +133,7 @@ include_once "sidenav.php";
 
     .admin-menu {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 22px;
     }
 
@@ -195,10 +195,9 @@ include_once "sidenav.php";
         </div>
 
         <div class="admin-menu">
-            <a href="manage-dresses.php" class="admin-btn">Manage Dresses</a>
             <a href="manage-users.php" class="admin-btn">Manage Users</a>
+            <a href="manage-dresses.php" class="admin-btn">Manage Dresses</a>
             <a href="view-messages.php" class="admin-btn">View Messages</a>
-            <a href="home.php" class="admin-btn">Home</a>
         </div>
 
     </section>

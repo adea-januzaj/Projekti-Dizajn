@@ -15,7 +15,7 @@ session_start();
     include_once "sidenav.php";
     ?>
 
-    <div id="main" style="transition: margin-left .5s; padding: 20px;">
+    <div id="main" >
         <section class="hero" id="hero">
             <?php if(isset($_SESSION['username'])): ?>
                 <h2>Welcome to Bellisse, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h2>

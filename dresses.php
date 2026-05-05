@@ -2,6 +2,14 @@
 session_start();
 include_once "Header.php";
 include_once "sidenav.php";
+include_once "database.php";
+
+$db = new Database();
+$conn = $db->getConnection();
+
+// FETCH PRODUCTS
+$stmt = $conn->query("SELECT * FROM products ORDER BY created_at DESC");
+$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -64,36 +72,30 @@ include_once "sidenav.php";
         transform: translateY(-8px);
     }
 
-    .dress-card img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
     .img-wrapper {
-    position: relative;
-    width: 100%;
-    height: auto;
+        position: relative;
+        width: 100%;
     }
 
     .img-wrapper img {
-    width: 100%;
-    display: block;
-    transition: opacity 0.4s ease;
+        width: 100%;
+        display: block;
+        transition: opacity 0.4s ease;
     }
 
     .img-hover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
     }
 
     .dress-card:hover .img-hover {
-    opacity: 1;
+        opacity: 1;
     }
 
     .dress-card:hover .img-default {
-    opacity: 0;
+        opacity: 0;
     }
 
     .dress-info {
@@ -141,203 +143,32 @@ include_once "sidenav.php";
 
     <div class="dresses-grid">
 
-       <div class="dress-card">
-    <div class="img-wrapper">
-        <img src="Foto/5.png" class="img-default">
-        <img src="Foto/5.1.png" class="img-hover">
-    </div>
-    <div class="dress-info">
-        <h3>Elara</h3>
-        <p>€120</p>
-    </div>
-    </div>
+        <?php if (count($products) === 0): ?>
+            <p style="text-align:center; width:100%;">No dresses available.</p>
+        <?php endif; ?>
+
+        <?php foreach($products as $p): ?>
 
         <div class="dress-card">
-    <div class="img-wrapper">
-        <img src="Foto/6.png" class="img-default">
-        <img src="Foto/6.1.png" class="img-hover">
-    </div>
-    <div class="dress-info">
-        <h3>Roselle</h3>
-        <p>€150</p>
-    </div>
-    </div>
+            <div class="img-wrapper">
 
-        <div class="dress-card">
-    <div class="img-wrapper">
-        <img src="Foto/7.png" class="img-default">
-        <img src="Foto/7.1.png" class="img-hover">
-    </div>
-    <div class="dress-info">
-        <h3>Virelle</h3>
-        <p>€110</p>
-    </div>
-    </div>
+                <!-- DEFAULT IMAGE -->
+                <img src="uploads/<?= htmlspecialchars($p['image']) ?>" class="img-default">
 
-        <div class="dress-card">
-    <div class="img-wrapper">
-        <img src="Foto/8.png" class="img-default">
-        <img src="Foto/8.1.png" class="img-hover">
-    </div>
-    <div class="dress-info">
-        <h3>Lumina</h3>
-        <p>€135</p>
-    </div>
-    </div>
+                <!-- HOVER IMAGE -->
+                <?php if (!empty($p['image_hover'])): ?>
+                    <img src="uploads/<?= htmlspecialchars($p['image_hover']) ?>" class="img-hover">
+                <?php endif; ?>
 
-        <div class="dress-card">
-    <div class="img-wrapper">
-        <img src="Foto/9.png" class="img-default">
-        <img src="Foto/9.1.png" class="img-hover">
-    </div>
-    <div class="dress-info">
-        <h3>Velina</h3>
-        <p>€95</p>
-    </div>
-    </div>
+            </div>
 
-        <div class="dress-card">
-    <div class="img-wrapper">
-        <img src="Foto/10.png" class="img-default">
-        <img src="Foto/10.1.png" class="img-hover">
-    </div>
-    <div class="dress-info">
-        <h3>Noelle</h3>
-        <p>€105</p>
-    </div>
-    </div>
+            <div class="dress-info">
+                <h3><?= htmlspecialchars($p['name']) ?></h3>
+                <p>€<?= $p['price'] ?></p>
+            </div>
+        </div>
 
-        <div class="dress-card">
-    <div class="img-wrapper">
-        <img src="Foto/11.png" class="img-default">
-        <img src="Foto/11.1.png" class="img-hover">
-    </div>
-    <div class="dress-info">
-        <h3>Amoura</h3>
-        <p>€140</p>
-    </div>
-    </div>
-
-        <div class="dress-card">
-    <div class="img-wrapper">
-        <img src="Foto/12.png" class="img-default">
-        <img src="Foto/12.1.png" class="img-hover">
-    </div>
-    <div class="dress-info">
-        <h3>Serene</h3>
-        <p>€125</p>
-    </div>
-    </div>
-
-        <div class="dress-card">
-    <div class="img-wrapper">
-        <img src="Foto/13.png" class="img-default">
-        <img src="Foto/13.1.png" class="img-hover">
-    </div>
-    <div class="dress-info">
-        <h3>Aveline</h3>
-        <p>€160</p>
-    </div>
-    </div>
-
-        <div class="dress-card">
-    <div class="img-wrapper">
-        <img src="Foto/14.png" class="img-default">
-        <img src="Foto/14.1.png" class="img-hover">
-    </div>
-    <div class="dress-info">
-        <h3>Ismera</h3>
-        <p>€130</p>
-    </div>
-    </div>
-
-        <div class="dress-card">
-    <div class="img-wrapper">
-        <img src="Foto/15.png" class="img-default">
-        <img src="Foto/15.1.png" class="img-hover">
-    </div>
-    <div class="dress-info">
-        <h3>Calira</h3>
-        <p>€145</p>
-    </div>
-    </div>
-
-        <div class="dress-card">
-    <div class="img-wrapper">
-        <img src="Foto/16.png" class="img-default">
-        <img src="Foto/16.1.png" class="img-hover">
-    </div>
-    <div class="dress-info">
-        <h3>Mirelle</h3>
-        <p>€155</p>
-    </div>
-    </div>
-
-        <div class="dress-card">
-    <div class="img-wrapper">
-        <img src="Foto/17.png" class="img-default">
-        <img src="Foto/17.1.png" class="img-hover">
-    </div>
-    <div class="dress-info">
-        <h3>Florielle</h3>
-        <p>€118</p>
-    </div>
-    </div>
-
-        <div class="dress-card">
-    <div class="img-wrapper">
-        <img src="Foto/18.png" class="img-default">
-        <img src="Foto/18.1.png" class="img-hover">
-    </div>
-    <div class="dress-info">
-        <h3>Petalia</h3>
-        <p>€128</p>
-    </div>
-    </div>
-
-        <div class="dress-card">
-    <div class="img-wrapper">
-        <img src="Foto/19.png" class="img-default">
-        <img src="Foto/19.1.png" class="img-hover">
-    </div>
-    <div class="dress-info">
-        <h3>Rosina</h3>
-        <p>€100</p>
-    </div>
-    </div>
-
-        <div class="dress-card">
-    <div class="img-wrapper">
-        <img src="Foto/20.png" class="img-default">
-        <img src="Foto/20.1.png" class="img-hover">
-    </div>
-    <div class="dress-info">
-        <h3>Velora</h3>
-        <p>€170</p>
-    </div>
-    </div>
-
-        <div class="dress-card">
-    <div class="img-wrapper">
-        <img src="Foto/21.png" class="img-default">
-        <img src="Foto/21.1.png" class="img-hover">
-    </div>
-    <div class="dress-info">
-        <h3>Celisse</h3>
-        <p>€165</p>
-    </div>
-    </div>
-
-        <div class="dress-card">
-    <div class="img-wrapper">
-        <img src="Foto/22.png" class="img-default">
-        <img src="Foto/22.1.png" class="img-hover">
-    </div>
-    <div class="dress-info">
-        <h3>Noira</h3>
-        <p>€180</p>
-    </div>
-    </div>
+        <?php endforeach; ?>
 
     </div>
 </main>
