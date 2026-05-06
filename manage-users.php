@@ -26,12 +26,28 @@ $users = $conn->query("SELECT * FROM useri")->fetchAll(PDO::FETCH_ASSOC);
 <?php include "Header.php"; include "sidenav.php"; ?>
 
 <style>
-body { font-family:'Playfair Display'; background:#FAF7F5; }
-
-.container { max-width:1100px; margin:auto; padding:40px; }
-
-h1 { text-align:center; color:#8c5c4a; margin-bottom:30px; }
-
+body { 
+   font-family: 'Playfair Display', serif;
+    background-color: #f5ece6;
+    color: #3e2f2f;
+    line-height: 1.6;
+}
+#main{
+    transition: margin-left .5s;
+    padding: 20px;
+}
+.hero {
+     text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(to right, #f5ece6, #f0dfd4);
+    border-radius: 12px;
+}
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #8c5c4a;
+    letter-spacing: 1px;
+}
 table {
     width:100%;
     background:white;
@@ -57,9 +73,14 @@ th { background:#f0dfd4; }
 .btn:hover { background:#C89B8C; }
 </style>
 
-<div class="container">
-    <h1>Manage Users</h1>
+<div id="main">
+<section class="hero" id="hero">
 
+    <h1>Manage Users</h1>
+    
+    </section>
+
+    <div class="users-container">
     <table>
         <tr>
             <th>ID</th>
@@ -80,5 +101,6 @@ th { background:#f0dfd4; }
         <?php endforeach; ?>
     </table>
 </div>
-
+</div>
 <?php include "Footer.php"; ?>
+

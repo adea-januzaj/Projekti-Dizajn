@@ -32,29 +32,38 @@ $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
   ?>
 
 <style>
-body {
-    font-family: 'Playfair Display', serif;
+body { 
+   font-family: 'Playfair Display', serif;
     background-color: #f5ece6;
     color: #3e2f2f;
     line-height: 1.6;
 }
-
-
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 40px;
+#main{
+    transition: margin-left .5s;
+    padding: 20px;
+}
+.hero {
+     text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(to right, #f5ece6, #f0dfd4);
+    border-radius: 12px;
+}
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #8c5c4a;
+    letter-spacing: 1px;
 }
 
-h1 {
-    text-align: center;
-    color: #8c5c4a;
-    margin-bottom: 40px;
+.messages-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
 }
 
 .message-card {
     background: white;
-    padding: 20px;
+    padding: 25px;
     border-radius: 12px;
     margin-bottom: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
@@ -103,8 +112,14 @@ h1 {
 }
 </style>
 
-<div class="container">
-    <h1>Client Messages</h1>
+<div id="main">
+<section class="hero" id="hero">
+
+    <h1>Clients Messages</h1>
+    
+    </section>
+      
+    <div class= "messages-container">
 
     <?php if (count($messages) === 0): ?>
         <p style="text-align:center; color:#777;">No messages yet.</p>
@@ -137,5 +152,5 @@ h1 {
         </div>
     <?php endforeach; ?>
 </div>
-
+</div>
 <?php include "Footer.php"; ?>
