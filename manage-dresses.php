@@ -12,9 +12,21 @@ $conn = $db->getConnection();
 
 
 
+if (isset($_POST['update'])) {
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+
+    $stmt = $conn->prepare("UPDATE products SET name = ?, price = ? WHERE id = ?");
+    $stmt->execute([$name, $price, $id]);
+
+    header("Location: manage-dresses.php");
+    exit();
+}
+
+
 if (isset($_POST['add'])) {
 
-    
     if (!empty($_SESSION['last_submit']) && time() - $_SESSION['last_submit'] < 2) {
         exit("Wait before submitting again.");
     }
@@ -23,23 +35,17 @@ if (isset($_POST['add'])) {
     $name = $_POST['name'];
     $price = $_POST['price'];
 
-    
     if (!is_dir("uploads")) {
         mkdir("uploads", 0777, true);
     }
 
-    
     $image = time() . "_" . $_FILES['image']['name'];
-    $tmp1 = $_FILES['image']['tmp_name'];
+    move_uploaded_file($_FILES['image']['tmp_name'], "uploads/" . $image);
 
-    move_uploaded_file($tmp1, "uploads/" . $image);
-
-    
     $image_hover = "";
     if (!empty($_FILES['image_hover']['name'])) {
         $image_hover = time() . "_hover_" . $_FILES['image_hover']['name'];
-        $tmp2 = $_FILES['image_hover']['tmp_name'];
-        move_uploaded_file($tmp2, "uploads/" . $image_hover);
+        move_uploaded_file($_FILES['image_hover']['tmp_name'], "uploads/" . $image_hover);
     }
 
     $stmt = $conn->prepare("
@@ -53,18 +59,15 @@ if (isset($_POST['add'])) {
 }
 
 
-
 if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
 
     $id = $_GET['delete'];
 
-    
     $stmt = $conn->prepare("SELECT image, image_hover FROM products WHERE id = ?");
     $stmt->execute([$id]);
     $product = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($product) {
-
         if (!empty($product['image']) && file_exists("uploads/" . $product['image'])) {
             unlink("uploads/" . $product['image']);
         }
@@ -82,6 +85,14 @@ if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
 }
 
 
+$editProduct = null;
+
+if (isset($_GET['edit']) && is_numeric($_GET['edit'])) {
+    $stmt = $conn->prepare("SELECT * FROM products WHERE id = ?");
+    $stmt->execute([$_GET['edit']]);
+    $editProduct = $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
 
 $stmt = $conn->query("SELECT * FROM products ORDER BY created_at DESC");
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -91,113 +102,77 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <style>
 body { 
-   font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', serif;
     background-color: #f5ece6;
     color: #3e2f2f;
-    line-height: 1.6;
 }
-#main{
+
+#main {
     transition: margin-left .5s;
     padding: 20px;
 }
+
 .hero {
-     text-align: center;
+    text-align: center;
     padding: 80px 20px;
     background: linear-gradient(to right, #f5ece6, #f0dfd4);
     border-radius: 12px;
 }
+
 .hero h1 {
     font-size: 2.5rem;
-    font-weight: 500;
     color: #8c5c4a;
-    letter-spacing: 1px;
 }
+
 .dresses-container {
     max-width: 1050px;
-    margin: 35px auto 60px;
-    padding: 0 25px;
+    margin: 35px auto;
 }
 
 form {
-    background: rgba(255, 255, 255, 0.75);
-    padding: 28px;
-    border-radius: 18px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-    margin-bottom: 45px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 40px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+    gap: 15px;
 }
 
 form input {
-    width: 100%;
-    padding: 14px 16px;
-    border-radius: 12px;
-    border: 1px solid #e1cfc6;
-    background: #fffaf7;
-    font-family: 'Playfair Display', serif;
-    font-size: 15px;
-    color: #3e2f2f;
-    box-sizing: border-box;
-}
-
-form input:focus {
-    outline: none;
-    border-color: #C89B8C;
-    box-shadow: 0 0 0 3px rgba(200,155,140,0.18);
-}
-
-form input[type="file"] {
-    background: white;
-    cursor: pointer;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
 }
 
 form button {
     grid-column: 1 / -1;
-    justify-self: center;
-    min-width: 180px;
-    padding: 13px 28px;
+    padding: 12px;
     background: #2C2C2C;
     color: white;
+    border-radius: 20px;
     border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-family: 'Playfair Display', serif;
-    font-size: 15px;
-    transition: 0.3s ease;
 }
 
 form button:hover {
     background: #C89B8C;
-    transform: translateY(-2px);
 }
 
 table {
     width: 100%;
     background: white;
-    border-collapse: collapse;
-    border-radius: 18px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
 }
 
 th {
     background: #ead6cb;
-    color: #3e2f2f;
-    font-size: 16px;
-    padding: 18px;
+    padding: 15px;
 }
 
 td {
-    padding: 20px 18px;
+    padding: 15px;
     text-align: center;
-    vertical-align: middle;
-    border-bottom: 1px solid #f1e4df;
-    font-size: 15px;
-}
-
-tr:last-child td {
-    border-bottom: none;
 }
 
 tr:hover {
@@ -205,105 +180,89 @@ tr:hover {
 }
 
 td img {
-    width: 85px;
-    height: 115px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+    width: 80px;
+    border-radius: 10px;
 }
 
 .btn-delete {
     background: #2C2C2C;
     color: white;
-    padding: 8px 18px;
-    border-radius: 20px;
+    padding: 6px 12px;
+    border-radius: 15px;
     text-decoration: none;
-    font-size: 14px;
-    transition: 0.3s ease;
 }
 
-.btn-delete:hover {
+.btn-edit {
     background: #C89B8C;
-}
-
-@media (max-width: 768px) {
-    form {
-        grid-template-columns: 1fr;
-    }
-
-    .dresses-container {
-        max-width: 100%;
-        padding: 0 15px;
-    }
-
-    table {
-        font-size: 14px;
-    }
-
-    th, td {
-        padding: 12px;
-    }
-}
-
-.btn-delete {
-    background:#2C2C2C;
-    color:white;
-    padding:6px 12px;
-    border-radius:15px;
-    text-decoration:none;
-}
-
-.btn-delete:hover {
-    background:#C89B8C;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 15px;
+    text-decoration: none;
+    margin-right: 5px;
 }
 </style>
 
 <div id="main">
-<section class="hero" id="hero">
 
+<section class="hero">
     <h1>Manage Dresses</h1>
-    
-    </section>
-     
-    <div class="dresses-container">
-   
-    <form method="POST" enctype="multipart/form-data">
-        <input type="text" name="name" placeholder="Dress Name" required>
-        <input type="number" step="0.01" name="price" placeholder="Price (€)" required>
+</section>
+
+<div class="dresses-container">
+
+<form method="POST" enctype="multipart/form-data">
+
+    <?php if ($editProduct): ?>
+        <input type="hidden" name="id" value="<?= $editProduct['id'] ?>">
+    <?php endif; ?>
+
+    <input type="text" name="name" placeholder="Dress Name"
+        value="<?= $editProduct ? htmlspecialchars($editProduct['name']) : '' ?>" required>
+
+    <input type="number" step="0.01" name="price" placeholder="Price (€)"
+        value="<?= $editProduct ? htmlspecialchars($editProduct['price']) : '' ?>" required>
+
+    <?php if (!$editProduct): ?>
         <input type="file" name="image" required>
         <input type="file" name="image_hover">
-        <button name="add">Add Dress</button>
-    </form>
+    <?php endif; ?>
 
-    
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Image</th>
-            <th>Action</th>
-        </tr>
+    <button name="<?= $editProduct ? 'update' : 'add' ?>">
+        <?= $editProduct ? 'Update Dress' : 'Add Dress' ?>
+    </button>
 
-        <?php foreach($products as $p): ?>
-        <tr>
-            <td><?= $p['id'] ?></td>
-            <td><?= htmlspecialchars($p['name']) ?></td>
-            <td><?= $p['price'] ?> €</td>
-            <td>
-                <img src="uploads/<?= $p['image'] ?>">
-            </td>
-            <td>
-                <a class="btn-delete"
-                   href="?delete=<?= $p['id'] ?>"
-                   onclick="return confirm('Delete this dress?')">
-                   Delete
-                </a>
-            </td>
-        </tr>
-        <?php endforeach; ?>
+</form>
 
-    </table>
+
+<table>
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Image</th>
+    <th>Action</th>
+</tr>
+
+<?php foreach($products as $p): ?>
+<tr>
+    <td><?= $p['id'] ?></td>
+    <td><?= htmlspecialchars($p['name']) ?></td>
+    <td><?= $p['price'] ?> €</td>
+    <td><img src="uploads/<?= $p['image'] ?>"></td>
+    <td>
+        <a class="btn-edit" href="?edit=<?= $p['id'] ?>">Edit</a>
+        <a class="btn-delete"
+           href="?delete=<?= $p['id'] ?>"
+           onclick="return confirm('Delete this dress?')">
+           Delete
+        </a>
+    </td>
+</tr>
+<?php endforeach; ?>
+
+</table>
+
 </div>
 </div>
+
 <?php include "Footer.php"; ?>
