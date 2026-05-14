@@ -7,7 +7,7 @@ include_once "database.php";
 $db = new Database();
 $conn = $db->getConnection();
 
-// FETCH PRODUCTS
+
 $stmt = $conn->query("SELECT * FROM products ORDER BY created_at DESC");
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -152,10 +152,8 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="dress-card">
             <div class="img-wrapper">
 
-                <!-- DEFAULT IMAGE -->
                 <img src="uploads/<?= htmlspecialchars($p['image']) ?>" class="img-default">
 
-                <!-- HOVER IMAGE -->
                 <?php if (!empty($p['image_hover'])): ?>
                     <img src="uploads/<?= htmlspecialchars($p['image_hover']) ?>" class="img-hover">
                 <?php endif; ?>

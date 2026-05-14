@@ -10,7 +10,7 @@ $conn = $db->getConnection();
 $success = "";
 $error = "";
 
-// HANDLE FORM SUBMIT
+
 if (isset($_POST['send'])) {
 
     $name = trim($_POST['name']);
@@ -101,7 +101,7 @@ if (isset($_POST['send'])) {
                 <button type="submit" name="send">Send Message</button>
             </form>
 
-            <!-- SUCCESS / ERROR -->
+           
             <?php if ($success): ?>
                 <p style="color:green; text-align:center; margin-top:15px;">
                     <?= $success ?>
